@@ -16,9 +16,13 @@ function solution(numbers, hand) {
             return
         }
         
+        // 2, 5, 8, 0 중 하나를 눌렀을 경우
+        // 이전에 눌렀던 값(leftHandPosition, rightHandPosition)과
+        // 현재 누른 값(target) 사이의 거리 구하기
         const leftHandDistance = getDistance(leftHandPosition, num)
         const rightHandDistance = getDistance(rightHandPosition, num)
         
+        // 거리 같을 때
         if (leftHandDistance === rightHandDistance) {
           if (hand === "right") {
             answer.push("R");
